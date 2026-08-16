@@ -3,265 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>FOOTAVISION</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background:#080b09;
-    color:white;
-    min-height:100vh;
+body {
+    background: #080b09;
+    color: white;
+    min-height: 100vh;
 }
 
-/* =========================
-   ALLGEMEIN
-========================= */
-
-.page{
-    display:none;
-    min-height:100vh;
+button {
+    border: none;
+    cursor: pointer;
 }
 
-.page.active{
-    display:block;
+.page {
+    display: none;
+    min-height: 100vh;
 }
 
-button{
-    border:none;
-    cursor:pointer;
+.page.active {
+    display: block;
 }
 
 /* =========================
    STARTSEITE
 ========================= */
 
-.home{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:30px;
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
     background:
-        radial-gradient(circle at top,#15351e 0%,#080b09 55%);
+        radial-gradient(circle at top, #173d22 0%, #080b09 55%);
 }
 
-.logo{
-    font-size:52px;
-    font-weight:900;
-    letter-spacing:3px;
-    margin-bottom:12px;
+.logo {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
-.logo span{
-    color:#35d15b;
+.logo span {
+    color: #35d15b;
 }
 
-.tagline{
-    color:#8c9890;
-    font-size:15px;
-    margin-bottom:50px;
+.subtitle {
+    color: #8b958f;
+    font-size: 15px;
+    margin-bottom: 50px;
 }
 
-.home-buttons{
-    width:100%;
-    max-width:430px;
+.home-buttons {
+    width: 100%;
+    max-width: 430px;
 }
 
-.home-button{
-    width:100%;
-    height:65px;
-    margin-bottom:14px;
-    border-radius:15px;
-    font-size:18px;
-    font-weight:800;
-    transition:.2s;
+.home-button {
+    width: 100%;
+    height: 64px;
+    margin-bottom: 14px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 800;
+    transition: 0.2s;
 }
 
-.create-button{
-    background:#35d15b;
-    color:#061008;
+.create-button {
+    background: #35d15b;
+    color: #061008;
 }
 
-.join-button{
-    background:#151a17;
-    color:white;
-    border:1px solid #29332d;
+.join-button {
+    background: #151a17;
+    color: white;
+    border: 1px solid #29332d;
 }
 
-.home-button:hover{
-    transform:translateY(-2px);
+.home-button:hover {
+    transform: translateY(-2px);
 }
 
 /* =========================
    VORBEREITUNG
 ========================= */
 
-.preparation{
-    padding:22px;
-    background:#080b09;
+.preparation {
+    min-height: 100vh;
+    padding: 20px;
+    background: #080b09;
 }
 
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.back-button{
-    background:#151a17;
-    color:white;
-    border:1px solid #29332d;
-    padding:12px 17px;
-    border-radius:11px;
+.back-button {
+    background: #151a17;
+    color: white;
+    border: 1px solid #29332d;
+    padding: 11px 16px;
+    border-radius: 11px;
 }
 
-.money{
-    background:#132519;
-    color:#35d15b;
-    border:1px solid #285e35;
-    padding:12px 18px;
-    border-radius:11px;
-    font-weight:800;
+.money {
+    background: #132519;
+    color: #35d15b;
+    border: 1px solid #285e35;
+    padding: 11px 17px;
+    border-radius: 11px;
+    font-weight: 800;
 }
 
-.title{
-    font-size:34px;
-    font-weight:900;
-    margin-bottom:6px;
+.title {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 7px;
 }
 
-.description{
-    color:#89938d;
-    margin-bottom:25px;
-}
-
-/* =========================
-   LAYOUT
-========================= */
-
-.content{
-    display:grid;
-    grid-template-columns:380px 1fr;
-    gap:20px;
+.description {
+    color: #89938d;
+    margin-bottom: 24px;
 }
 
 /* =========================
-   SPIELERLISTE
+   BEREICHE
 ========================= */
 
-.panel{
-    background:#101411;
-    border:1px solid #252d28;
-    border-radius:18px;
-    padding:18px;
+.content {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 20px;
 }
 
-.panel-title{
-    font-size:20px;
-    font-weight:900;
-    margin-bottom:15px;
+.panel {
+    background: #101411;
+    border: 1px solid #252d28;
+    border-radius: 18px;
+    padding: 18px;
 }
 
-.player-list{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-    max-height:600px;
-    overflow-y:auto;
+.panel-title {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 15px;
 }
 
-.player{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:10px;
-    background:#171c19;
-    border:1px solid #222a25;
-    border-radius:13px;
+/* =========================
+   SPIELER
+========================= */
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-height: 610px;
+    overflow-y: auto;
 }
 
-.player-image{
-    width:55px;
-    height:55px;
-    object-fit:cover;
-    border-radius:10px;
-    background:#262d28;
+.player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: #171c19;
+    border: 1px solid #222a25;
+    border-radius: 13px;
 }
 
-.player-info{
-    flex:1;
+.player-image {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #252c28;
 }
 
-.player-name{
-    font-size:15px;
-    font-weight:800;
+.player-info {
+    flex: 1;
 }
 
-.player-position{
-    font-size:12px;
-    color:#7e8982;
-    margin-top:4px;
+.player-name {
+    font-size: 15px;
+    font-weight: 800;
 }
 
-.player-price{
-    font-size:13px;
-    color:#35d15b;
-    font-weight:bold;
-    margin-top:3px;
+.player-position {
+    color: #7f8983;
+    font-size: 12px;
+    margin-top: 4px;
 }
 
-.favorite{
-    background:none;
-    color:#59635d;
-    font-size:25px;
+.player-price {
+    color: #35d15b;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 3px;
 }
 
-.favorite.active{
-    color:#ffd83d;
+.favorite {
+    background: transparent;
+    color: #5e6861;
+    font-size: 25px;
+}
+
+.favorite.active {
+    color: #ffd83d;
 }
 
 /* =========================
    FORMATION
 ========================= */
 
-.formation-area{
-    display:flex;
-    flex-direction:column;
+.formation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.formation-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:15px;
+select {
+    background: #171c19;
+    color: white;
+    border: 1px solid #303a34;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-select{
-    background:#171c19;
-    color:white;
-    border:1px solid #303a34;
-    padding:11px;
-    border-radius:10px;
-}
+/* =========================
+   SPIELFELD
+========================= */
 
-/* Spielfeld */
-
-.pitch{
-    position:relative;
-    width:100%;
-    max-width:700px;
-    height:600px;
-    margin:auto;
+.pitch {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
 
     background:
         repeating-linear-gradient(
@@ -272,187 +265,177 @@ select{
             #19582a 120px
         );
 
-    border:3px solid #2e8b45;
-    border-radius:14px;
-    overflow:hidden;
+    border: 3px solid #2e8b45;
+    border-radius: 14px;
 }
 
-/* Spielfeldlinien */
-
-.pitch::before{
-    content:"";
-    position:absolute;
-    inset:20px;
-    border:2px solid rgba(255,255,255,.55);
-    border-radius:5px;
+.pitch::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    border: 2px solid rgba(255,255,255,0.55);
+    border-radius: 5px;
 }
 
-.center-line{
-    position:absolute;
-    width:100%;
-    height:2px;
-    background:rgba(255,255,255,.5);
-    top:50%;
+.center-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.5);
+    top: 50%;
 }
 
-.center-circle{
-    position:absolute;
-    width:130px;
-    height:130px;
-    border:2px solid rgba(255,255,255,.5);
-    border-radius:50%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+.center-circle {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* Spieler auf Formation */
-
-.formation-player{
-    position:absolute;
-    width:64px;
-    height:64px;
-    border-radius:50%;
-    background:#111512;
-    border:3px solid #35d15b;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:11px;
-    font-weight:900;
-    z-index:3;
-    box-shadow:0 4px 12px rgba(0,0,0,.35);
+.formation-player {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #101512;
+    border: 3px solid #35d15b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 900;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.tw{
-    bottom:35px;
-    left:50%;
-    transform:translateX(-50%);
+.tw {
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.lv{
-    bottom:120px;
-    left:12%;
+.lv {
+    bottom: 120px;
+    left: 12%;
 }
 
-.iv1{
-    bottom:105px;
-    left:37%;
+.iv1 {
+    bottom: 105px;
+    left: 37%;
 }
 
-.iv2{
-    bottom:105px;
-    right:37%;
+.iv2 {
+    bottom: 105px;
+    right: 37%;
 }
 
-.rv{
-    bottom:120px;
-    right:12%;
+.rv {
+    bottom: 120px;
+    right: 12%;
 }
 
-.cm1{
-    bottom:260px;
-    left:28%;
+.cm1 {
+    bottom: 260px;
+    left: 28%;
 }
 
-.cm2{
-    bottom:290px;
-    left:50%;
-    transform:translateX(-50%);
+.cm2 {
+    bottom: 290px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.cm3{
-    bottom:260px;
-    right:28%;
+.cm3 {
+    bottom: 260px;
+    right: 28%;
 }
 
-.lf{
-    top:135px;
-    left:14%;
+.lf {
+    top: 135px;
+    left: 14%;
 }
 
-.st{
-    top:90px;
-    left:50%;
-    transform:translateX(-50%);
+.st {
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.rf{
-    top:135px;
-    right:14%;
+.rf {
+    top: 135px;
+    right: 14%;
 }
 
 /* =========================
-   BOTTOM
+   BUTTON UNTEN
 ========================= */
 
-.bottom-bar{
-    margin-top:18px;
-    display:flex;
-    justify-content:flex-end;
+.bottom-bar {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.ready-button{
-    background:#35d15b;
-    color:#061008;
-    padding:16px 30px;
-    border-radius:13px;
-    font-weight:900;
-    font-size:16px;
+.ready-button {
+    background: #35d15b;
+    color: #061008;
+    padding: 15px 25px;
+    border-radius: 13px;
+    font-weight: 900;
+    font-size: 15px;
 }
 
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
-@media(max-width:850px){
+@media (max-width: 850px) {
 
-    .content{
-        grid-template-columns:1fr;
+    .content {
+        grid-template-columns: 1fr;
     }
 
-    .pitch{
-        height:520px;
+    .pitch {
+        height: 540px;
     }
 
-    .player-list{
-        max-height:400px;
+    .player-list {
+        max-height: 420px;
     }
-
 }
 
-@media(max-width:500px){
+@media (max-width: 500px) {
 
-    .logo{
-        font-size:39px;
+    .logo {
+        font-size: 38px;
     }
 
-    .title{
-        font-size:28px;
+    .title {
+        font-size: 28px;
     }
 
-    .preparation{
-        padding:14px;
+    .preparation {
+        padding: 14px;
     }
 
-    .pitch{
-        height:470px;
+    .pitch {
+        height: 470px;
     }
 
-    .formation-player{
-        width:54px;
-        height:54px;
-        font-size:9px;
+    .formation-player {
+        width: 53px;
+        height: 53px;
+        font-size: 9px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
 
 <!-- ==================================================
      STARTSEITE
@@ -464,7 +447,7 @@ select{
         FOOT<span>AVISION</span>
     </div>
 
-    <div class="tagline">
+    <div class="subtitle">
         Build your team. Create your vision.
     </div>
 
@@ -473,24 +456,18 @@ select{
         <button
             class="home-button create-button"
             onclick="openPreparation()">
-
             ⚽ Spiel erstellen
-
         </button>
-
 
         <button
             class="home-button join-button"
             onclick="joinGame()">
-
             ➜ Spiel beitreten
-
         </button>
 
     </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -499,30 +476,20 @@ select{
 
 <section id="preparation" class="page preparation">
 
-
-    <!-- HEADER -->
-
     <div class="header">
 
         <button
             class="back-button"
             onclick="goHome()">
-
             ← Zurück
-
         </button>
 
-
         <div class="money">
-
             💰 800 Mio.
-
         </div>
 
     </div>
 
-
-    <!-- TITEL -->
 
     <div class="title">
         Vorbereitung
@@ -533,14 +500,11 @@ select{
     </div>
 
 
-    <!-- CONTENT -->
-
     <div class="content">
 
-
-        <!-- ==========================================
+        <!-- ==============================
              SPIELERLISTE
-        =========================================== -->
+        =============================== -->
 
         <div class="panel">
 
@@ -548,18 +512,17 @@ select{
                 👥 Spielerliste
             </div>
 
-
             <div class="player-list">
 
 
-                <!-- SPIELER 1 -->
+                <!-- 1 -->
 
                 <div class="player">
 
                     <img
                         class="player-image"
-                        src="images/player1.png"
-                        alt="Spielerbild">
+                        src="FV - 1.png"
+                        alt="Spieler 1">
 
                     <div class="player-info">
 
@@ -580,22 +543,20 @@ select{
                     <button
                         class="favorite"
                         onclick="favorite(this)">
-
                         ☆
-
                     </button>
 
                 </div>
 
 
-                <!-- SPIELER 2 -->
+                <!-- 2 -->
 
                 <div class="player">
 
                     <img
                         class="player-image"
-                        src="images/player2.png"
-                        alt="Spielerbild">
+                        src="FV - 2.png"
+                        alt="Spieler 2">
 
                     <div class="player-info">
 
@@ -608,7 +569,7 @@ select{
                         </div>
 
                         <div class="player-price">
-                            95 Mio.
+                            110 Mio.
                         </div>
 
                     </div>
@@ -616,22 +577,20 @@ select{
                     <button
                         class="favorite"
                         onclick="favorite(this)">
-
                         ☆
-
                     </button>
 
                 </div>
 
 
-                <!-- SPIELER 3 -->
+                <!-- 3 -->
 
                 <div class="player">
 
                     <img
                         class="player-image"
-                        src="images/player3.png"
-                        alt="Spielerbild">
+                        src="FV - 3.png"
+                        alt="Spieler 3">
 
                     <div class="player-info">
 
@@ -644,7 +603,7 @@ select{
                         </div>
 
                         <div class="player-price">
-                            90 Mio.
+                            100 Mio.
                         </div>
 
                     </div>
@@ -652,22 +611,20 @@ select{
                     <button
                         class="favorite"
                         onclick="favorite(this)">
-
                         ☆
-
                     </button>
 
                 </div>
 
 
-                <!-- SPIELER 4 -->
+                <!-- 4 -->
 
                 <div class="player">
 
                     <img
                         class="player-image"
-                        src="images/player4.png"
-                        alt="Spielerbild">
+                        src="FV - 4.png"
+                        alt="Spieler 4">
 
                     <div class="player-info">
 
@@ -680,7 +637,7 @@ select{
                         </div>
 
                         <div class="player-price">
-                            100 Mio.
+                            105 Mio.
                         </div>
 
                     </div>
@@ -688,22 +645,20 @@ select{
                     <button
                         class="favorite"
                         onclick="favorite(this)">
-
                         ☆
-
                     </button>
 
                 </div>
 
 
-                <!-- SPIELER 5 -->
+                <!-- 5 -->
 
                 <div class="player">
 
                     <img
                         class="player-image"
-                        src="images/player5.png"
-                        alt="Spielerbild">
+                        src="FV - 5.png"
+                        alt="Spieler 5">
 
                     <div class="player-info">
 
@@ -712,7 +667,109 @@ select{
                         </div>
 
                         <div class="player-position">
+                            CM
+                        </div>
+
+                        <div class="player-price">
+                            95 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 6 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 6.png"
+                        alt="Spieler 6">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 6
+                        </div>
+
+                        <div class="player-position">
                             IV
+                        </div>
+
+                        <div class="player-price">
+                            90 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 7 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 7.png"
+                        alt="Spieler 7">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 7
+                        </div>
+
+                        <div class="player-position">
+                            IV
+                        </div>
+
+                        <div class="player-price">
+                            85 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 8 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 8.png"
+                        alt="Spieler 8">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 8
+                        </div>
+
+                        <div class="player-position">
+                            LV
                         </div>
 
                         <div class="player-price">
@@ -724,27 +781,59 @@ select{
                     <button
                         class="favorite"
                         onclick="favorite(this)">
-
                         ☆
-
                     </button>
 
                 </div>
 
 
-                <!-- SPIELER 6 -->
+                <!-- 9 -->
 
                 <div class="player">
 
                     <img
                         class="player-image"
-                        src="images/player6.png"
-                        alt="Spielerbild">
+                        src="FV - 9.png"
+                        alt="Spieler 9">
 
                     <div class="player-info">
 
                         <div class="player-name">
-                            Spieler 6
+                            Spieler 9
+                        </div>
+
+                        <div class="player-position">
+                            RV
+                        </div>
+
+                        <div class="player-price">
+                            80 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 10 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 10.png"
+                        alt="Spieler 10">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 10
                         </div>
 
                         <div class="player-position">
@@ -760,9 +849,177 @@ select{
                     <button
                         class="favorite"
                         onclick="favorite(this)">
-
                         ☆
+                    </button>
 
+                </div>
+
+
+                <!-- 11 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 11.png"
+                        alt="Spieler 11">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 11
+                        </div>
+
+                        <div class="player-position">
+                            ST
+                        </div>
+
+                        <div class="player-price">
+                            115 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 12 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 12.png"
+                        alt="Spieler 12">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 12
+                        </div>
+
+                        <div class="player-position">
+                            LF
+                        </div>
+
+                        <div class="player-price">
+                            90 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 13 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 13.png"
+                        alt="Spieler 13">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 13
+                        </div>
+
+                        <div class="player-position">
+                            CM
+                        </div>
+
+                        <div class="player-price">
+                            85 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 14 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 14.png"
+                        alt="Spieler 14">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 14
+                        </div>
+
+                        <div class="player-position">
+                            IV
+                        </div>
+
+                        <div class="player-price">
+                            75 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
+                    </button>
+
+                </div>
+
+
+                <!-- 15 -->
+
+                <div class="player">
+
+                    <img
+                        class="player-image"
+                        src="FV - 15.png"
+                        alt="Spieler 15">
+
+                    <div class="player-info">
+
+                        <div class="player-name">
+                            Spieler 15
+                        </div>
+
+                        <div class="player-position">
+                            RF
+                        </div>
+
+                        <div class="player-price">
+                            95 Mio.
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="favorite"
+                        onclick="favorite(this)">
+                        ☆
                     </button>
 
                 </div>
@@ -773,13 +1030,11 @@ select{
         </div>
 
 
-
-        <!-- ==========================================
+        <!-- ==============================
              FORMATION
-        =========================================== -->
+        =============================== -->
 
-        <div class="panel formation-area">
-
+        <div class="panel">
 
             <div class="formation-header">
 
@@ -787,20 +1042,28 @@ select{
                     🟢 Formation
                 </div>
 
+                <select id="formation">
 
-                <select>
+                    <option value="433">
+                        4-3-3
+                    </option>
 
-                    <option>4-3-3</option>
-                    <option>4-4-2</option>
-                    <option>3-4-2-1</option>
-                    <option>4-2-3-1</option>
+                    <option value="442">
+                        4-4-2
+                    </option>
+
+                    <option value="3421">
+                        3-4-2-1
+                    </option>
+
+                    <option value="4231">
+                        4-2-3-1
+                    </option>
 
                 </select>
 
             </div>
 
-
-            <!-- SPIELFELD -->
 
             <div class="pitch">
 
@@ -809,14 +1072,9 @@ select{
                 <div class="center-circle"></div>
 
 
-                <!-- TW -->
-
                 <div class="formation-player tw">
                     TW
                 </div>
-
-
-                <!-- ABWEHR -->
 
                 <div class="formation-player lv">
                     LV
@@ -834,9 +1092,6 @@ select{
                     RV
                 </div>
 
-
-                <!-- MITTELFELD -->
-
                 <div class="formation-player cm1">
                     CM
                 </div>
@@ -848,9 +1103,6 @@ select{
                 <div class="formation-player cm3">
                     CM
                 </div>
-
-
-                <!-- ANGRIFF -->
 
                 <div class="formation-player lf">
                     LF
@@ -871,14 +1123,13 @@ select{
 
                 <button
                     class="ready-button"
-                    onclick="ready()">
+                    onclick="finishPreparation()">
 
                     Vorbereitung abgeschlossen →
 
                 </button>
 
             </div>
-
 
         </div>
 
@@ -887,80 +1138,82 @@ select{
 </section>
 
 
-
 <script>
 
+/* =========================
+   START → VORBEREITUNG
+========================= */
 
-/* ==========================================
-   SEITENWECHSEL
-========================================== */
+function openPreparation() {
 
-function openPreparation(){
-
-    document.getElementById("home")
+    document
+        .getElementById("home")
         .classList.remove("active");
 
-    document.getElementById("preparation")
+    document
+        .getElementById("preparation")
         .classList.add("active");
-
 }
 
 
-function goHome(){
+/* =========================
+   ZURÜCK
+========================= */
 
-    document.getElementById("preparation")
+function goHome() {
+
+    document
+        .getElementById("preparation")
         .classList.remove("active");
 
-    document.getElementById("home")
+    document
+        .getElementById("home")
         .classList.add("active");
-
 }
 
 
-/* ==========================================
+/* =========================
    FAVORIT
-========================================== */
+========================= */
 
-function favorite(button){
+function favorite(button) {
 
     button.classList.toggle("active");
 
-    if(button.classList.contains("active")){
+    if (button.classList.contains("active")) {
 
-        button.innerHTML="★";
+        button.innerHTML = "★";
 
-    }else{
+    } else {
 
-        button.innerHTML="☆";
+        button.innerHTML = "☆";
 
     }
-
 }
 
 
-/* ==========================================
+/* =========================
    SPIEL BEITRETEN
-========================================== */
+========================= */
 
-function joinGame(){
+function joinGame() {
 
-    alert("Spiel beitreten wird als Nächstes eingerichtet.");
+    alert("Spiel beitreten kommt als Nächstes.");
 
 }
 
 
-/* ==========================================
-   FERTIG
-========================================== */
+/* =========================
+   VORBEREITUNG FERTIG
+========================= */
 
-function ready(){
+function finishPreparation() {
 
     alert("Vorbereitung abgeschlossen!");
 
 }
 
 </script>
-
 
 </body>
 </html>
