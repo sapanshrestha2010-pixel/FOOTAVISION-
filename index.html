@@ -10,49 +10,35 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
     background: #080b09;
     color: white;
-    min-height: 100vh;
 }
 
-button {
-    border: none;
-    cursor: pointer;
-}
-
+/* Seiten */
 .page {
-    display: none;
     min-height: 100vh;
 }
 
-.page.active {
-    display: block;
-}
-
-/* =========================
-   STARTSEITE
-========================= */
-
-.home {
-    min-height: 100vh;
+/* STARTSEITE */
+#home {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     padding: 25px;
-    background:
-        radial-gradient(circle at top, #173d22 0%, #080b09 55%);
+    background: radial-gradient(circle at top, #173d22, #080b09 60%);
 }
 
 .logo {
-    font-size: 52px;
+    font-size: 50px;
     font-weight: 900;
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .logo span {
@@ -60,73 +46,61 @@ button {
 }
 
 .subtitle {
-    color: #8b958f;
-    font-size: 15px;
+    color: #89938d;
     margin-bottom: 50px;
 }
 
-.home-buttons {
+.buttons {
     width: 100%;
     max-width: 430px;
 }
 
-.home-button {
+.main-button {
     width: 100%;
-    height: 64px;
+    height: 65px;
     margin-bottom: 14px;
     border-radius: 15px;
     font-size: 18px;
     font-weight: 800;
-    transition: 0.2s;
 }
 
-.create-button {
+.create {
     background: #35d15b;
     color: #061008;
 }
 
-.join-button {
+.join {
     background: #151a17;
     color: white;
     border: 1px solid #29332d;
 }
 
-.home-button:hover {
-    transform: translateY(-2px);
-}
-
-/* =========================
-   VORBEREITUNG
-========================= */
-
-.preparation {
-    min-height: 100vh;
+/* VORBEREITUNG */
+#preparation {
+    display: none;
     padding: 20px;
-    background: #080b09;
 }
 
-.header {
+.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
 }
 
-.back-button {
+.back {
     background: #151a17;
     color: white;
-    border: 1px solid #29332d;
-    padding: 11px 16px;
+    padding: 12px 17px;
     border-radius: 11px;
 }
 
-.money {
+.budget {
     background: #132519;
     color: #35d15b;
-    border: 1px solid #285e35;
-    padding: 11px 17px;
+    padding: 12px 18px;
     border-radius: 11px;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .title {
@@ -137,14 +111,10 @@ button {
 
 .description {
     color: #89938d;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
 }
 
-/* =========================
-   BEREICHE
-========================= */
-
-.content {
+.layout {
     display: grid;
     grid-template-columns: 380px 1fr;
     gap: 20px;
@@ -163,15 +133,12 @@ button {
     margin-bottom: 15px;
 }
 
-/* =========================
-   SPIELER
-========================= */
-
+/* SPIELERLISTE */
 .player-list {
     display: flex;
     flex-direction: column;
     gap: 9px;
-    max-height: 610px;
+    max-height: 600px;
     overflow-y: auto;
 }
 
@@ -181,11 +148,10 @@ button {
     gap: 12px;
     padding: 10px;
     background: #171c19;
-    border: 1px solid #222a25;
     border-radius: 13px;
 }
 
-.player-image {
+.player img {
     width: 56px;
     height: 56px;
     object-fit: cover;
@@ -193,42 +159,37 @@ button {
     background: #252c28;
 }
 
-.player-info {
+.info {
     flex: 1;
 }
 
-.player-name {
-    font-size: 15px;
-    font-weight: 800;
+.name {
+    font-weight: bold;
 }
 
-.player-position {
+.position {
     color: #7f8983;
     font-size: 12px;
     margin-top: 4px;
 }
 
-.player-price {
+.price {
     color: #35d15b;
     font-size: 13px;
-    font-weight: 700;
     margin-top: 3px;
 }
 
-.favorite {
+.star {
     background: transparent;
-    color: #5e6861;
+    color: #68726b;
     font-size: 25px;
 }
 
-.favorite.active {
+.star.active {
     color: #ffd83d;
 }
 
-/* =========================
-   FORMATION
-========================= */
-
+/* FORMATION */
 .formation-header {
     display: flex;
     justify-content: space-between;
@@ -244,83 +205,71 @@ select {
     border-radius: 10px;
 }
 
-/* =========================
-   SPIELFELD
-========================= */
-
 .pitch {
     position: relative;
     width: 100%;
-    max-width: 720px;
     height: 600px;
-    margin: auto;
-    overflow: hidden;
-
-    background:
-        repeating-linear-gradient(
-            to bottom,
-            #17602b 0px,
-            #17602b 60px,
-            #19582a 60px,
-            #19582a 120px
-        );
-
+    background: repeating-linear-gradient(
+        to bottom,
+        #17602b 0,
+        #17602b 60px,
+        #19582a 60px,
+        #19582a 120px
+    );
     border: 3px solid #2e8b45;
     border-radius: 14px;
+    overflow: hidden;
 }
 
-.pitch::before {
+.pitch:before {
     content: "";
     position: absolute;
     inset: 20px;
-    border: 2px solid rgba(255,255,255,0.55);
-    border-radius: 5px;
+    border: 2px solid rgba(255,255,255,.5);
 }
 
-.center-line {
+.line {
     position: absolute;
     width: 100%;
     height: 2px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,.5);
     top: 50%;
 }
 
-.center-circle {
+.circle {
     position: absolute;
     width: 130px;
     height: 130px;
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid rgba(255,255,255,.5);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.formation-player {
+.pos {
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 62px;
+    height: 62px;
     border-radius: 50%;
     background: #101512;
     border: 3px solid #35d15b;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-size: 11px;
-    font-weight: 900;
-    z-index: 3;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    font-weight: bold;
 }
 
 .tw {
-    bottom: 35px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .lv {
-    bottom: 120px;
-    left: 12%;
+    bottom: 115px;
+    left: 10%;
 }
 
 .iv1 {
@@ -334,82 +283,67 @@ select {
 }
 
 .rv {
-    bottom: 120px;
-    right: 12%;
+    bottom: 115px;
+    right: 10%;
 }
 
 .cm1 {
-    bottom: 260px;
-    left: 28%;
+    bottom: 255px;
+    left: 27%;
 }
 
 .cm2 {
-    bottom: 290px;
+    bottom: 285px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .cm3 {
-    bottom: 260px;
-    right: 28%;
+    bottom: 255px;
+    right: 27%;
 }
 
 .lf {
-    top: 135px;
-    left: 14%;
+    top: 130px;
+    left: 13%;
 }
 
 .st {
-    top: 90px;
+    top: 80px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .rf {
-    top: 135px;
-    right: 14%;
+    top: 130px;
+    right: 13%;
 }
 
-/* =========================
-   BUTTON UNTEN
-========================= */
-
-.bottom-bar {
+.finish {
     margin-top: 18px;
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
 }
 
-.ready-button {
+.finish button {
     background: #35d15b;
     color: #061008;
-    padding: 15px 25px;
+    padding: 15px 24px;
     border-radius: 13px;
-    font-weight: 900;
-    font-size: 15px;
+    font-weight: bold;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 850px) {
-
-    .content {
+/* HANDY */
+@media(max-width:850px) {
+    .layout {
         grid-template-columns: 1fr;
     }
 
     .pitch {
-        height: 540px;
-    }
-
-    .player-list {
-        max-height: 420px;
+        height: 500px;
     }
 }
 
-@media (max-width: 500px) {
-
+@media(max-width:500px) {
     .logo {
         font-size: 38px;
     }
@@ -418,17 +352,17 @@ select {
         font-size: 28px;
     }
 
-    .preparation {
+    #preparation {
         padding: 14px;
     }
 
     .pitch {
-        height: 470px;
+        height: 460px;
     }
 
-    .formation-player {
-        width: 53px;
-        height: 53px;
+    .pos {
+        width: 52px;
+        height: 52px;
         font-size: 9px;
     }
 }
@@ -437,11 +371,8 @@ select {
 
 <body>
 
-<!-- ==================================================
-     STARTSEITE
-================================================== -->
-
-<section id="home" class="page active home">
+<!-- STARTSEITE -->
+<div id="home" class="page">
 
     <div class="logo">
         FOOT<span>AVISION</span>
@@ -451,45 +382,41 @@ select {
         Build your team. Create your vision.
     </div>
 
-    <div class="home-buttons">
+    <div class="buttons">
 
         <button
-            class="home-button create-button"
-            onclick="openPreparation()">
+            class="main-button create"
+            onclick="document.getElementById('home').style.display='none'; document.getElementById('preparation').style.display='block';">
             ⚽ Spiel erstellen
         </button>
 
         <button
-            class="home-button join-button"
-            onclick="joinGame()">
+            class="main-button join"
+            onclick="alert('Spiel beitreten kommt als Nächstes.');">
             ➜ Spiel beitreten
         </button>
 
     </div>
 
-</section>
+</div>
 
 
-<!-- ==================================================
-     VORBEREITUNG
-================================================== -->
+<!-- VORBEREITUNG -->
+<div id="preparation" class="page">
 
-<section id="preparation" class="page preparation">
-
-    <div class="header">
+    <div class="top">
 
         <button
-            class="back-button"
-            onclick="goHome()">
+            class="back"
+            onclick="document.getElementById('preparation').style.display='none'; document.getElementById('home').style.display='flex';">
             ← Zurück
         </button>
 
-        <div class="money">
+        <div class="budget">
             💰 800 Mio.
         </div>
 
     </div>
-
 
     <div class="title">
         Vorbereitung
@@ -500,12 +427,9 @@ select {
     </div>
 
 
-    <div class="content">
+    <div class="layout">
 
-        <!-- ==============================
-             SPIELERLISTE
-        =============================== -->
-
+        <!-- SPIELER -->
         <div class="panel">
 
             <div class="panel-title">
@@ -514,526 +438,206 @@ select {
 
             <div class="player-list">
 
-
-                <!-- 1 -->
-
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 1.png"
-                        alt="Spieler 1">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 1
-                        </div>
-
-                        <div class="player-position">
-                            ST
-                        </div>
-
-                        <div class="player-price">
-                            120 Mio.
-                        </div>
-
+                    <img src="FV - 1.png">
+                    <div class="info">
+                        <div class="name">Spieler 1</div>
+                        <div class="position">ST</div>
+                        <div class="price">120 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 2 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 2.png"
-                        alt="Spieler 2">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 2
-                        </div>
-
-                        <div class="player-position">
-                            LF
-                        </div>
-
-                        <div class="player-price">
-                            110 Mio.
-                        </div>
-
+                    <img src="FV - 2.png">
+                    <div class="info">
+                        <div class="name">Spieler 2</div>
+                        <div class="position">LF</div>
+                        <div class="price">110 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 3 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 3.png"
-                        alt="Spieler 3">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 3
-                        </div>
-
-                        <div class="player-position">
-                            RF
-                        </div>
-
-                        <div class="player-price">
-                            100 Mio.
-                        </div>
-
+                    <img src="FV - 3.png">
+                    <div class="info">
+                        <div class="name">Spieler 3</div>
+                        <div class="position">RF</div>
+                        <div class="price">100 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 4 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 4.png"
-                        alt="Spieler 4">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 4
-                        </div>
-
-                        <div class="player-position">
-                            CM
-                        </div>
-
-                        <div class="player-price">
-                            105 Mio.
-                        </div>
-
+                    <img src="FV - 4.png">
+                    <div class="info">
+                        <div class="name">Spieler 4</div>
+                        <div class="position">CM</div>
+                        <div class="price">105 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 5 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 5.png"
-                        alt="Spieler 5">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 5
-                        </div>
-
-                        <div class="player-position">
-                            CM
-                        </div>
-
-                        <div class="player-price">
-                            95 Mio.
-                        </div>
-
+                    <img src="FV - 5.png">
+                    <div class="info">
+                        <div class="name">Spieler 5</div>
+                        <div class="position">CM</div>
+                        <div class="price">95 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 6 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 6.png"
-                        alt="Spieler 6">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 6
-                        </div>
-
-                        <div class="player-position">
-                            IV
-                        </div>
-
-                        <div class="player-price">
-                            90 Mio.
-                        </div>
-
+                    <img src="FV - 6.png">
+                    <div class="info">
+                        <div class="name">Spieler 6</div>
+                        <div class="position">IV</div>
+                        <div class="price">90 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 7 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 7.png"
-                        alt="Spieler 7">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 7
-                        </div>
-
-                        <div class="player-position">
-                            IV
-                        </div>
-
-                        <div class="player-price">
-                            85 Mio.
-                        </div>
-
+                    <img src="FV - 7.png">
+                    <div class="info">
+                        <div class="name">Spieler 7</div>
+                        <div class="position">IV</div>
+                        <div class="price">85 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 8 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 8.png"
-                        alt="Spieler 8">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 8
-                        </div>
-
-                        <div class="player-position">
-                            LV
-                        </div>
-
-                        <div class="player-price">
-                            80 Mio.
-                        </div>
-
+                    <img src="FV - 8.png">
+                    <div class="info">
+                        <div class="name">Spieler 8</div>
+                        <div class="position">LV</div>
+                        <div class="price">80 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 9 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 9.png"
-                        alt="Spieler 9">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 9
-                        </div>
-
-                        <div class="player-position">
-                            RV
-                        </div>
-
-                        <div class="player-price">
-                            80 Mio.
-                        </div>
-
+                    <img src="FV - 9.png">
+                    <div class="info">
+                        <div class="name">Spieler 9</div>
+                        <div class="position">RV</div>
+                        <div class="price">80 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 10 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 10.png"
-                        alt="Spieler 10">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 10
-                        </div>
-
-                        <div class="player-position">
-                            TW
-                        </div>
-
-                        <div class="player-price">
-                            70 Mio.
-                        </div>
-
+                    <img src="FV - 10.png">
+                    <div class="info">
+                        <div class="name">Spieler 10</div>
+                        <div class="position">TW</div>
+                        <div class="price">70 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 11 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 11.png"
-                        alt="Spieler 11">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 11
-                        </div>
-
-                        <div class="player-position">
-                            ST
-                        </div>
-
-                        <div class="player-price">
-                            115 Mio.
-                        </div>
-
+                    <img src="FV - 11.png">
+                    <div class="info">
+                        <div class="name">Spieler 11</div>
+                        <div class="position">ST</div>
+                        <div class="price">115 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 12 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 12.png"
-                        alt="Spieler 12">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 12
-                        </div>
-
-                        <div class="player-position">
-                            LF
-                        </div>
-
-                        <div class="player-price">
-                            90 Mio.
-                        </div>
-
+                    <img src="FV - 12.png">
+                    <div class="info">
+                        <div class="name">Spieler 12</div>
+                        <div class="position">LF</div>
+                        <div class="price">90 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 13 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 13.png"
-                        alt="Spieler 13">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 13
-                        </div>
-
-                        <div class="player-position">
-                            CM
-                        </div>
-
-                        <div class="player-price">
-                            85 Mio.
-                        </div>
-
+                    <img src="FV - 13.png">
+                    <div class="info">
+                        <div class="name">Spieler 13</div>
+                        <div class="position">CM</div>
+                        <div class="price">85 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 14 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 14.png"
-                        alt="Spieler 14">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 14
-                        </div>
-
-                        <div class="player-position">
-                            IV
-                        </div>
-
-                        <div class="player-price">
-                            75 Mio.
-                        </div>
-
+                    <img src="FV - 14.png">
+                    <div class="info">
+                        <div class="name">Spieler 14</div>
+                        <div class="position">IV</div>
+                        <div class="price">75 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
-
-                <!-- 15 -->
 
                 <div class="player">
-
-                    <img
-                        class="player-image"
-                        src="FV - 15.png"
-                        alt="Spieler 15">
-
-                    <div class="player-info">
-
-                        <div class="player-name">
-                            Spieler 15
-                        </div>
-
-                        <div class="player-position">
-                            RF
-                        </div>
-
-                        <div class="player-price">
-                            95 Mio.
-                        </div>
-
+                    <img src="FV - 15.png">
+                    <div class="info">
+                        <div class="name">Spieler 15</div>
+                        <div class="position">RF</div>
+                        <div class="price">95 Mio.</div>
                     </div>
-
-                    <button
-                        class="favorite"
-                        onclick="favorite(this)">
+                    <button class="star"
+                        onclick="this.classList.toggle('active'); this.innerHTML=this.classList.contains('active')?'★':'☆';">
                         ☆
                     </button>
-
                 </div>
-
 
             </div>
-
         </div>
 
 
-        <!-- ==============================
-             FORMATION
-        =============================== -->
-
+        <!-- FORMATION -->
         <div class="panel">
 
             <div class="formation-header">
@@ -1042,91 +646,41 @@ select {
                     🟢 Formation
                 </div>
 
-                <select id="formation">
-
-                    <option value="433">
-                        4-3-3
-                    </option>
-
-                    <option value="442">
-                        4-4-2
-                    </option>
-
-                    <option value="3421">
-                        3-4-2-1
-                    </option>
-
-                    <option value="4231">
-                        4-2-3-1
-                    </option>
-
+                <select>
+                    <option>4-3-3</option>
+                    <option>4-4-2</option>
+                    <option>3-4-2-1</option>
+                    <option>4-2-3-1</option>
                 </select>
 
             </div>
 
-
             <div class="pitch">
 
-                <div class="center-line"></div>
+                <div class="line"></div>
+                <div class="circle"></div>
 
-                <div class="center-circle"></div>
+                <div class="pos tw">TW</div>
 
+                <div class="pos lv">LV</div>
+                <div class="pos iv1">IV</div>
+                <div class="pos iv2">IV</div>
+                <div class="pos rv">RV</div>
 
-                <div class="formation-player tw">
-                    TW
-                </div>
+                <div class="pos cm1">CM</div>
+                <div class="pos cm2">CM</div>
+                <div class="pos cm3">CM</div>
 
-                <div class="formation-player lv">
-                    LV
-                </div>
-
-                <div class="formation-player iv1">
-                    IV
-                </div>
-
-                <div class="formation-player iv2">
-                    IV
-                </div>
-
-                <div class="formation-player rv">
-                    RV
-                </div>
-
-                <div class="formation-player cm1">
-                    CM
-                </div>
-
-                <div class="formation-player cm2">
-                    CM
-                </div>
-
-                <div class="formation-player cm3">
-                    CM
-                </div>
-
-                <div class="formation-player lf">
-                    LF
-                </div>
-
-                <div class="formation-player st">
-                    ST
-                </div>
-
-                <div class="formation-player rf">
-                    RF
-                </div>
+                <div class="pos lf">LF</div>
+                <div class="pos st">ST</div>
+                <div class="pos rf">RF</div>
 
             </div>
 
+            <div class="finish">
 
-            <div class="bottom-bar">
-
-                <button
-                    class="ready-button"
-                    onclick="finishPreparation()">
-
+                <button onclick="alert('Vorbereitung abgeschlossen!')">
                     Vorbereitung abgeschlossen →
-
                 </button>
 
             </div>
@@ -1135,84 +689,12 @@ select {
 
     </div>
 
-</section>
+</div>
 
 
 <script>
-
-/* =========================
-   START → VORBEREITUNG
-========================= */
-
-function openPreparation() {
-
-    document
-        .getElementById("home")
-        .classList.remove("active");
-
-    document
-        .getElementById("preparation")
-        .classList.add("active");
-}
-
-
-/* =========================
-   ZURÜCK
-========================= */
-
-function goHome() {
-
-    document
-        .getElementById("preparation")
-        .classList.remove("active");
-
-    document
-        .getElementById("home")
-        .classList.add("active");
-}
-
-
-/* =========================
-   FAVORIT
-========================= */
-
-function favorite(button) {
-
-    button.classList.toggle("active");
-
-    if (button.classList.contains("active")) {
-
-        button.innerHTML = "★";
-
-    } else {
-
-        button.innerHTML = "☆";
-
-    }
-}
-
-
-/* =========================
-   SPIEL BEITRETEN
-========================= */
-
-function joinGame() {
-
-    alert("Spiel beitreten kommt als Nächstes.");
-
-}
-
-
-/* =========================
-   VORBEREITUNG FERTIG
-========================= */
-
-function finishPreparation() {
-
-    alert("Vorbereitung abgeschlossen!");
-
-}
-
+/* Startseite sofort anzeigen */
+document.getElementById("home").style.display = "flex";
 </script>
 
 </body>
